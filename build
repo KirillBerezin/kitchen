@@ -1,0 +1,21 @@
+import re
+from collections import Counter       #Импортирую библиотеки
+
+text = input()     
+up = text.lower()                     #Перевожу в нижний регистр введённый текст
+up = re.sub(r'([ .,\/#!$%\^&\*;:{}=\_`~()])', r' ', up)
+up = re.sub(r'( )\1+', r'\1', up)     #Отчищаю от лишних знаков
+words = up.split()
+count = Counter(words)
+sorting = []                         
+
+for key, value in count.items():
+    sorting.append((key, value))
+
+for i in range(len(sorting)-1):                        #Сортировка пузырьком
+    for j in range(len(sorting)-i-1):
+        if sorting[j][1] < sorting[j+1][1]:
+            sorting[j], sorting[j+1] = sorting[j+1], sorting[j]
+
+for i in range(len(sorting)):
+    print(sorting[i][0] , ' [' , str(sorting[i][1]) , ']')
