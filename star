@@ -14,3 +14,5 @@ if razn2 >= 1:
   print(int((allk2)**(1/2)))
 elif sqrt(allk) == int(sqrt(allk)):
   print(int((m+n)**(1/2)))
+elif sqrt(allk)!=int(sqrt(allk)) and m==n:
+  print(int((m+n)**(1/2)))
