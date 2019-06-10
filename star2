@@ -1,0 +1,9 @@
+import math
+a, b = [int(x) for x in input().split(' ')]
+
+if math.fabs(a - b) == 1 and math.sqrt(a + b) == int(math.sqrt(a + b)):
+	print(int(math.sqrt(a + b)))
+
+else:
+	minimal = min(a, b)
+	print(int(math.sqrt(2*minimal)))
