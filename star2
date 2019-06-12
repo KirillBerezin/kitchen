@@ -1,9 +1,10 @@
 import math
-a, b = [int(x) for x in input().split(' ')]
+colors = [int(x) for x in input().split(',')]          #Вводить 2 числа через запятую в 1 строчку
+minimal = min(colors)
+colors.remove(minimal)
+another_c = colors[0]
 
-if math.fabs(a - b) == 1 and math.sqrt(a + b) == int(math.sqrt(a + b)):
-	print(int(math.sqrt(a + b)))
-
+if another_c >= minimal + 1 and math.sqrt(2 * minimal + 1) == int(math.sqrt(2 * minimal + 1)):
+	print(int(math.sqrt(2 * minimal + 1)))
 else:
-	minimal = min(a, b)
 	print(int(math.sqrt(2*minimal)))
